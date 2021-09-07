@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--css file-->
+    <link rel="stylesheet" href="./index.css" />
+    <!--font awesome cdn-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <!--Navbar-->
+
+    <nav>
+      <ul class="navbar">
+        <li class="left-nav">
+          <div class="nav-icon">
+            <img src="./assets/music.gif" class="musicImg" />
+            <div class="ninja-studio">
+              <div class="ninja">Ninja</div>
+              <div class="studio">Studio</div>
+            </div>
+          </div>
+          <div class="favorites">
+            <span class="favourite-lg">Favourites</span
+            ><i class="far fa-heart favourite-sm"></i>
+          </div>
+        </li>
+        <li class="right-nav">
+          <div class="search">
+            <div class="search-div1">
+              <i class="fas fa-search"></i><i class="fas fa-microphone"></i
+              ><input type="text" style="color: white;" placeholder="Search" class="searchbar" />
+            </div>
+            <div class="search-div2">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+          <div class="queue-icon">
+            <i class="fas fa-music" onclick="showQueue()"></i>
+            <div class="close">
+              <i class="fas fa-times" onClick="hideQueue()"></i>
+            </div>
+          </div>
+          <div class="notification"><i class="fas fa-bell notify"></i></div>
+          <div class="account">
+            <img src="./assets/avatar.png" class="avatar" />
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!--Main Section-->
+    <main class="main">
+      <div class="left-main">
+        <!--Caraousel-->
+        <div class="caraousel">
+          <div class="caraousel-container">
+            <div class="left">
+              <img src="assets/caraousel-1.jpeg" class="caraousel-img" />
+            </div>
+            <div class="center">
+              <div class="bottom-layer">
+                <img src="assets/caraousel-2.jpeg" class="caraousel-img" />
+              </div>
+              <div class="top-layer">
+                <img src="assets/caraousel-2.jpeg" class="caraousel-img" />
+              </div>
+            </div>
+            <div class="right">
+              <img src="assets/caraousel-3.jpeg" class="caraousel-img" />
+            </div>
+          </div>
+        </div>
+
+        <!--Release Section -->
+        <div class="release">
+          <div class="release-header">Latest Release</div>
+          <div class="top-release">
+            <div class="latest-release">
+              <div class="left-release">
+                <div class="release-container" onclick="showControls(event);" data-song="Desire">
+                  <img
+                    src="https://a10.gaanacdn.com/gn_img/albums/koMWQ7BKqL/oMWQNXrMbq/size_xxl_1589617440.webp"
+                    class="onism" 
+                     data-song="Desire"
+                  /><i class="fas fa-play play1"  data-song="Desire"></i>
+                </div>
+                <div>
+                  <h3>Desire</h3>
+                  <p class="date">12 August,2017</p>
+                </div>
+              </div>
+              <div class="right-release">
+                <i
+                  class="fas fa-ellipsis-h ellipsis"
+                  onclick="showMusicDropdown()"
+                ></i>
+                <div class="music-dropdown">
+                  <div class="music-container">
+                    <i class="fas fa-play"></i>&nbsp; Play Now
+                  </div>
+                  <hr class="line" />
+                  <div class="music-container">
+                    <i class="fas fa-plus"></i>&nbsp; Add to Queue
+                  </div>
+                  <hr class="line" />
+                  <div class="music-container">
+                    <i class="fas fa-bars"></i>&nbsp; Add to Playlist
+                  </div>
+                  <hr class="line" />
+                  <div class="music-container">
+                    <i class="fas fa-info-circle"></i>&nbsp; Get info
+                  </div>
+                </div>
+                <div>4:44</div>
+              </div>
+            </div>
+            <div class="latest-release">
+              <div class="left-release">
+                <div class="release-container" onclick="showControls(event);" data-song="Tere_Bina">
+                  <img
+                    src="https://img.wynk.in/unsafe/275x275/filters:no_upscale():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_universalmusic/music/1571618878/srch_universalmusic_00602508435348-INUM71900052.jpg"
+                    class="onism"
+                    data-song="Tere_Bina"
+                  /><i class="fas fa-play play1" data-song="Tere_Bina"></i>
+                </div>
+                <div>
+                  <h3>Tere Bina</h3>
+                  <p class="date">12 August,2017</p>
+                </div>
+              </div>
+              <div class="right-release">
+                <i class="fas fa-ellipsis-h"></i>
+
+                <div>4:44</div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-release">
+            <div class="latest-release">
+              <div class="left-release">
+                <div class="release-container" onclick="showControls(event);" data-song="Believer">
+                  <img
+                    src="https://i.pinimg.com/736x/5e/f5/3a/5ef53a2498421e93178e9ba063dcb56b.jpg"
+                    class="onism"
+                    data-song="Believer"
+                  /><i class="fas fa-play play1" data-song="Believer"></i>
+                </div>
+                <div>
+                  <h3>Believer</h3>
+                  <p class="date">12 August,2017</p>
+                </div>
+              </div>
+              <div class="right-release">
+                <i class="fas fa-ellipsis-h"></i>
+                <div>4:44</div>
+              </div>
+            </div>
+            <div class="latest-release">
+              <div class="left-release">
+                <div class="release-container" onclick="showControls(event);" data-song="Sham">
+                  <img
+                    src="./assets/onism.jpg"
+                    class="onism"
+                    data-song="Sham"
+                  /><i class="fas fa-play play1" data-song="Sham"></i>
+                </div>
+                <div>
+                  <h3>Sham</h3>
+                  <p class="date">12 August,2017</p>
+                </div>
+              </div>
+              <div class="right-release">
+                <div>
+                  <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <div>4:44</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Popular artists-->
+        <div class="artists">
+          <div class="artist-header">Popular Artists</div>
+          <div class="popular-artist">
+            <div class="artist-wrapper">
+              <a href="./second.html">
+                <div class="artist-img-container">
+                  <img
+                    src="https://inserbia.info/wp-content/uploads/2019/12/Ariana-Grande-1024x768.jpg"
+                    class="artist-img"
+                  />
+                  <i class="fas fa-play play"></i>
+                </div>
+              </a>
+              <div class="artist-name">Onism</div>
+            </div>
+            <div class="artist-wrapper">
+              <a href="./second.html">
+                <div class="artist-img-container">
+                  <img
+                    src="https://myfreedo.in/img/7955393_singer%201.png"
+                    class="artist-img"
+                  />
+                  <i class="fas fa-play play"></i>
+                </div>
+              </a>
+              <div class="artist-name">Onism</div>
+            </div>
+            <div class="artist-wrapper">
+              <a href="./second.html">
+                <div class="artist-img-container">
+                  <img
+                    src="https://worldblaze.in/wp-content/uploads/2014/11/Sonu-Nigam.jpg"
+                    class="artist-img"
+                  />
+                  <i class="fas fa-play play"></i>
+                </div>
+              </a>
+              <div class="artist-name">Onism</div>
+            </div>
+            <div class="artist-wrapper">
+              <a href="./second.html">
+                <div class="artist-img-container">
+                  <img
+                    src="https://urbanasian.com/wp-content/uploads/2015/10/singer-shreya-ghoshal-hot-photos-17.jpg"
+                    class="artist-img"
+                  />
+                  <i class="fas fa-play play"></i>
+                </div>
+              </a>
+              <div class="artist-name">Onism</div>
+            </div>
+            <div class="artist-wrapper">
+              <a href="./second.html">
+                <div class="artist-img-container">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTizYxAmp498edBBWMmgn6-sMGlTwoq1jG7MkukM5D_j7KWaMdriuRe3t8L7IcWCSEj-YQ&usqp=CAU"
+                    class="artist-img"
+                  />
+                  <i class="fas fa-play play"></i>
+                </div>
+              </a>
+              <div class="artist-name">Onism</div>
+            </div>
+            <div class="artist-wrapper">
+              <a href="./second.html">
+                <div class="artist-img-container">
+                  <img src="./assets/onism.jpg" class="artist-img" />
+                  <i class="fas fa-play play"></i>
+                </div>
+              </a>
+              <div class="artist-name">Onism</div>
+            </div>
+            <div class="artist-wrapper">
+              <a href="./second.html">
+                <div class="artist-img-container">
+                  <img src="./assets/onism.jpg" class="artist-img" />
+                  <i class="fas fa-play play"></i>
+                </div>
+              </a>
+              <div class="artist-name">Onism</div>
+            </div>
+          </div>
+        </div>
+        <!--Stations-->
+        <div class="stations">
+          <div class="station-item">
+            <img
+              src="https://th.bing.com/th/id/R.78336a9a7a027f558eebdeb5cedb045c?rik=n6luZVM6%2bx3QCA&riu=http%3a%2f%2frlv.zcache.com%2furban_microphone_poster-r8a878fb8ee864fa68ba42668d1b280de_w2q_8byvr_324.jpg&ehk=4kg4hq6GYiKxUOYLzlrwEvetcbQZzJtg8woWdwVUczQ%3d&risl=&pid=ImgRaw&r=0"
+              class="station-start"
+            />
+          </div>
+          <div class="station-item">
+            <img
+              src="https://render.fineartamerica.com/images/rendered/small/poster/images-square-real-5/i-love-music-amber-kresge.jpg"
+              class="station-image"
+            />
+            <p class="station-name">Love</p>
+          </div>
+          <div class="station-item">
+            <img
+              src="https://st2.depositphotos.com/2697407/8245/v/950/depositphotos_82456688-stock-illustration-retro-party-music-poster-design.jpg"
+              class="station-image"
+            />
+            <p class="station-name">Retro</p>
+          </div>
+          <div class="station-item">
+            <img
+              src="https://www.badfishposters.com/wp-content/uploads/2015/05/chill-out-square.jpg"
+              class="station-image"
+            />
+            <p class="station-name">Chill</p>
+          </div>
+
+          <div class="station-item">
+            <img
+              src="https://th.bing.com/th/id/OIP.64zJ_gacQP2vlqzkKdl5VwHaEG?pid=ImgDet&rs=1"
+              class="station-image"
+            />
+            <p class="station-name">Workout</p>
+          </div>
+
+          <div class="station-item">
+            <img
+              style="background-color: white"
+              src="https://pngimg.com/uploads/rock_music/rock_music_PNG21.png"
+              class="station-image"
+            />
+            <p class="station-name">Rock</p>
+          </div>
+          <div class="station-item">
+            <img
+              src="https://th.bing.com/th/id/OIP.CHexDvY6tQg9rgu3hIZpxQHaDt?pid=ImgDet&rs=1"
+              class="station-image"
+            />
+            <p class="station-name">Pop</p>
+          </div>
+          <div class="station-item">
+            <img src="assets/onism.jpg" class="station-image" />
+            <p class="station-name">Love</p>
+          </div>
+        </div>
+
+        <!--Categories-->
+        <div class="categories">
+          <div class="category-item">
+            <img
+              src="https://static.toiimg.com/photo/73045588.cms"
+              class="category-image"
+            />
+            <p class="category-name">Party</p>
+          </div>
+          <div class="category-item">
+            <img
+              src="https://image.shutterstock.com/image-photo/portrait-confident-young-dj-headphones-260nw-1082977484.jpg"
+              class="category-image"
+            />
+            <p class="category-name">Electronic</p>
+          </div>
+          <div class="category-item">
+            <img
+              src="https://st2.depositphotos.com/1370441/8050/i/600/depositphotos_80502214-stock-photo-couple-driving-convertable-at-sunset.jpg"
+              class="category-image"
+            />
+            <p class="category-name">Road Trip</p>
+          </div>
+        </div>
+
+        <!--Latest Hindi-->
+        <div class="latestSongs">
+          <div class="song-header">Latest Hindi</div>
+          <div class="song-wrapper">
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://img.wynk.in/unsafe/275x275/filters:no_upscale():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_universalmusic/music/1571618878/srch_universalmusic_00602508435348-INUM71900052.jpg"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://a10.gaanacdn.com/gn_img/albums/koMWQ7BKqL/oMWQNXrMbq/size_xxl_1589617440.webp"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="./assets/onism.jpg"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://is1-ssl.mzstatic.com/image/thumb/Music18/v4/50/07/46/500746e8-4e44-2d8c-75ac-9f2b9e0e39dc/mzm.ieudxgst.jpg/400x400cc.jpg"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://www.bollywoodbabu.in/wp-content/uploads/2020/08/alag-aasmaan-anuv-jain-1.png"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img src="assets/onism.jpg" class="song-image" />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img src="assets/onism.jpg" class="song-image" />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+          </div>
+        </div>
+
+        <!--Latest English-->
+        <div class="latestSongs">
+          <div class="song-header">Latest English</div>
+          <div class="song-wrapper">
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BNmY0OWFlMzYtMDNkZC00YTdhLWI4ZWEtM2I5OWZlYzVkNGQzXkEyXkFqcGdeQXVyNjE0ODc0MDc@._V1_FMjpg_UX1000_.jpg"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://i.pinimg.com/736x/5e/f5/3a/5ef53a2498421e93178e9ba063dcb56b.jpg"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://ih1.redbubble.net/image.818804664.1231/poster,504x498,f8f8f8-pad,600x600,f8f8f8.u3.jpg"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://www.iamannemarie.com/wp-content/uploads/2021/05/to-be-young.jpg"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://render.fineartamerica.com/images/rendered/default/poster/8/10/break/images-medium-5/ed-sheeran-and-song-titles-tony-rubino.jpg"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img
+                  src="https://static.displate.com/280x392/displate/2021-01-15/dab4fa6fd6ab99f84cac42ed3bab5750_9c841d20eb05bc6306af0c1abaf61432.jpg"
+                  class="song-image"
+                />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+            <div class="song-item">
+              <div class="song-image-container">
+                <img src="assets/onism.jpg" class="song-image" />
+              </div>
+              <div class="song-title">Onism</div>
+              <div class="song-date">12 August,2017</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-main">
+        <div class="queue-header-wrapper">
+          <div class="queue-header">
+            <div class="queue">Queue</div>
+            <div class="queue-dialog">
+              Queue <i class="fas fa-chevron-down" onClick="showDropdown()"></i>
+            </div>
+            <div class="dropdown">
+              <div class="playlist">PlayLists</div>
+              <hr class="line" />
+              <div class="favourite">Favourite Songs</div>
+            </div>
+          </div>
+        </div>
+        <div class="queue-content"></div>
+      </div>
+    </main>
+
+    <!--Music Player-->
+    <section class="music-player">
+      <div class="left-player">
+        <div class="player-image-container">
+          <img src="https://i.pinimg.com/originals/9f/a1/3a/9fa13acf7fd692b9310adda64cd0be3f.jpg" class="player-image" />
+        </div>
+        <div class="song-description">
+          <p class="player-song">Alone</p>
+          <p class="player-artist">Alan Walker</p>
+        </div>
+        <div class="bottom-icon"><i class="far fa-heart"></i></div>
+        <div class="bottom-icon"><i class="fas fa-ban"></i></div>
+      </div>
+      <div class="center-player">
+       
+        <audio src="./songs/Alone.mp3" id="song" controls>
+       
+      </div>
+      <div class="right-player">
+        <i class="fas fa-music"></i>
+        <i class="fas fa-laptop"></i>
+        <i class="fas fa-expand-alt"></i>
+      </div>
+    </section>
+    <script src="data.json"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

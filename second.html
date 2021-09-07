@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--css file-->
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./Second.css" />
+    <!--font awesome cdn-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Music Player</title>
+  </head>
+
+  <body>
+    <!--Navbar-->
+
+    <nav>
+      <ul class="navbar">
+        <li class="left-nav">
+          <div class="nav-icon">
+            <a href="./index.html"
+              ><img src="./assets/music.gif" class="musicImg"
+            /></a>
+            <div class="ninja-studio">
+              <div class="ninja">Ninja</div>
+              <div class="studio">Studio</div>
+            </div>
+          </div>
+          <div class="favorites">
+            <span class="favourite-lg">Favourites</span
+            ><i class="far fa-heart favourite-sm"></i>
+          </div>
+        </li>
+        <li class="right-nav">
+          <div class="search">
+            <div class="search-div1">
+              <i class="fas fa-search"></i><i class="fas fa-microphone"></i
+              ><input type="text" placeholder="Search" class="searchbar" />
+            </div>
+            <div class="search-div2">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+          <div class="queue-icon">
+            <i class="fas fa-music" onclick="showQueue()"></i>
+            <div class="close">
+              <i class="fas fa-times" onClick="hideQueue()"></i>
+            </div>
+          </div>
+          <div class="notification"><i class="fas fa-bell notify"></i></div>
+          <div class="account">
+            <img src="./assets/avatar.png" class="avatar" />
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!--Main Section-->
+    <main class="main">
+      <div class="left-main">
+        <div class="second-left-top">
+          <div class="image-container">
+            <img src="https://miro.medium.com/max/471/0*_YcTdWCkDbiz2-yC.png" />
+          </div>
+          <div class="image-right-side">
+            <div class="heading">
+              <h2>ColdPlay</h2>
+              <span>851 followers</span>
+            </div>
+            <div class="artist-description">
+              <span>British Band</span><br />
+              <span>
+                In publishing and graphic design, Lorem ipsum is a placeholder
+                text commonly used to demonstrate the visual form of a document
+                or a typeface without relying on meaningful content. Lorem ipsum
+                may be used as a placeholder before final copy is available.
+              </span>
+            </div>
+            <div class="right-play">
+              <button id="playall">Play All</button>
+              <span>Follow</span>
+            </div>
+            <span id="tracks-line">247 Tracks | 128 Albums</span>
+          </div>
+        </div>
+        <div class="list2">
+          <div class="pl1">
+            <p class="rp1sno">01</p>
+            <img
+              class="rp1img"
+              src="https://paglasongs.com/uploads/thumb/sft4/1541_4.jpg"
+            />
+            <div class="rp1name">
+              <p class="rp1t">Mirage</p>
+              <p class="rp1a">Else</p>
+            </div>
+            <i class="far fa-heart" id="rp1i"></i>
+            <i class="fa fa-plus" aria-hidden="true" id="pl1i"></i>
+          </div>
+          <div class="pl1">
+            <p class="rp1sno">02</p>
+            <img
+              class="rp1img"
+              src="https://render.fineartamerica.com/images/rendered/search/poster/6/8/break/images/artworkimages/medium/3/no121-my-coldplay-watercolor-music-poster-chungkong-art.jpg"
+            />
+            <div class="rp1name">
+              <p class="rp1t">AB Bout</p>
+              <p class="rp1a">Rosie</p>
+            </div>
+            <i class="far fa-heart" id="rp1i"></i>
+            <i class="fa fa-plus" aria-hidden="true" id="pl1i"></i>
+          </div>
+          <div class="pl1">
+            <p class="rp1sno">03</p>
+            <img
+              class="rp1img"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROZntEIcaegkWuWvPi5sBl5zQ5qDqQaKFbVQ&usqp=CAU"
+            />
+            <div class="rp1name">
+              <p class="rp1t">New Skin</p>
+              <p class="rp1a">Flume</p>
+            </div>
+            <i class="far fa-heart" id="rp1i"></i>
+            <i class="fa fa-plus" aria-hidden="true" id="pl1i"></i>
+          </div>
+          <div class="pl1">
+            <p class="rp1sno">04</p>
+            <img
+              class="rp1img"
+              src="https://i.pinimg.com/564x/8a/4f/21/8a4f21b9c6978e9284c0de5d117d4f50.jpg"
+            />
+            <div class="rp1name">
+              <p class="rp1t">Mirage</p>
+              <p class="rp1a">Else</p>
+            </div>
+            <i class="far fa-heart" id="rp1i"></i>
+            <i class="fa fa-plus" aria-hidden="true" id="pl1i"></i>
+          </div>
+          <div class="pl1">
+            <p class="rp1sno">05</p>
+            <img
+              class="rp1img"
+              src="https://rukminim1.flixcart.com/image/416/416/j1nvwcw0/poster/z/m/m/medium-pkp2214-chris-martin-coldplay-poster-original-imaer8ztykef3snk.jpeg?q=70"
+            />
+            <div class="rp1name">
+              <p class="rp1t">AB Bout</p>
+              <p class="rp1a">Rosie</p>
+            </div>
+            <i class="far fa-heart" id="rp1i"></i>
+            <i class="fa fa-plus" aria-hidden="true" id="pl1i"></i>
+          </div>
+        </div>
+      </div>
+      <div class="right-main">
+        <div class="list1-header">
+          <div class="list1">Similar Artists</div>
+          <div class="list1-dialog">View All</div>
+        </div>
+
+        <div class="queue-content1">
+          <div class="list1">
+            <div class="sa1">
+              <img
+                class="sa1img"
+                src="https://pbs.twimg.com/profile_images/1433640996600909836/SUHA-1Fu_400x400.jpg"
+              />
+              <div class="sa1name">
+                <p class="sa1t">Imagine Dragons</p>
+                <p class="sa1a">Pop Band</p>
+              </div>
+              <i class="fa fa-ellipsis-h" id="sa1i" aria-hidden="true"
+                ><br /><span>3:20</span></i
+              >
+            </div>
+            <div class="sa1">
+              <img
+                class="sa1img"
+                src="https://geo-media.beatport.com/image_size/500x500/0c556527-7b50-4711-b503-7c64ca61fd2c.jpg"
+              />
+              <div class="sa1name">
+                <p class="sa1t">Imagine Dragons</p>
+                <p class="sa1a">Pop Band</p>
+              </div>
+              <i class="fa fa-ellipsis-h" id="sa1i" aria-hidden="true"
+                ><br /><span>2:30</span></i
+              >
+            </div>
+            <div class="sa1">
+              <img
+                class="sa1img"
+                src="https://i1.wp.com/www.thenocturnaltimes.com/wp-content/uploads/2021/02/alan-walker-and-salem-ilese.jpg?fit=2048%2C2048"
+              />
+              <div class="sa1name">
+                <p class="sa1t">Imagine Dragons</p>
+                <p class="sa1a">Pop Band</p>
+              </div>
+              <i class="fa fa-ellipsis-h" id="sa1i" aria-hidden="true"
+                ><br /><span>4:44</span></i
+              >
+            </div>
+          </div>
+
+          <div class="list2-header">
+            <div class="list2">Recently Played</div>
+            <div class="list2-dialog">View All</div>
+          </div>
+          <div class="list2">
+            <div class="rp1">
+              <p class="rp1sno">01</p>
+              <img
+                class="rp1img"
+                src="https://c.saavncdn.com/542/Aisha-Hindi-2010-20190603134712-500x500.jpg"
+              />
+              <div class="rp1name">
+                <p class="rp1t">Mirage</p>
+                <p class="rp1a">Else</p>
+              </div>
+              <i class="far fa-heart" id="rp1i"></i>
+            </div>
+            <div class="rp1">
+              <p class="rp1sno">02</p>
+              <img
+                class="rp1img"
+                src="https://i.pinimg.com/originals/9f/a1/3a/9fa13acf7fd692b9310adda64cd0be3f.jpg"
+              />
+              <div class="rp1name">
+                <p class="rp1t">AB Bout</p>
+                <p class="rp1a">Rosie</p>
+              </div>
+              <i class="far fa-heart" id="rp1i"></i>
+            </div>
+            <div class="rp1">
+              <p class="rp1sno">03</p>
+              <img
+                class="rp1img"
+                src="https://images.genius.com/4f2229a7f389259102404e6b4b82a1a9.1000x1000x1.jpg"
+              />
+              <div class="rp1name">
+                <p class="rp1t">New Skin</p>
+                <p class="rp1a">Flume</p>
+              </div>
+              <i class="far fa-heart" id="rp1i"></i>
+            </div>
+            <div class="rp1">
+              <p class="rp1sno">04</p>
+              <img class="rp1img" src="./assets/onism.jpg" />
+              <div class="rp1name">
+                <p class="rp1t">Mirage</p>
+                <p class="rp1a">Else</p>
+              </div>
+              <i class="far fa-heart" id="rp1i"></i>
+            </div>
+            <div class="rp1">
+              <p class="rp1sno">05</p>
+              <img class="rp1img" src="./assets/onism.jpg" />
+              <div class="rp1name">
+                <p class="rp1t">AB Bout</p>
+                <p class="rp1a">Rosie</p>
+              </div>
+              <i class="far fa-heart" id="rp1i"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--Music Player-->
+    <section class="music-player">
+      <div class="left-player">
+        <div class="player-image-container">
+          <img src="assets/onism.jpg" class="player-image" />
+        </div>
+        <div class="song-description">
+          <p class="player-song">Imagine by John</p>
+          <p class="player-artist">John Lennon</p>
+        </div>
+        <div class="bottom-icon"><i class="far fa-heart"></i></div>
+        <div class="bottom-icon"><i class="fas fa-ban"></i></div>
+      </div>
+      <div class="center-player">
+        <div class="controls">
+          <i class="fas fa-random"></i><i class="fas fa-step-backward"></i
+          ><i class="far fa-pause-circle"></i><i class="fas fa-step-forward"></i
+          ><i class="fas fa-retweet"></i>
+        </div>
+        <div class="progress">
+          <div>1:39</div>
+          <div class="progress-wrapper">
+            <progress
+              class="song-played"
+              min="0"
+              max="100"
+              value="20"
+            ></progress>
+          </div>
+          <div>4:44</div>
+        </div>
+      </div>
+      <div class="right-player">
+        <i class="fas fa-music"></i>
+        <i class="fas fa-laptop"></i>
+        <i class="fas fa-volume-up"></i>
+        <progress min="0" max="100" value="50"></progress>
+        <i class="fas fa-expand-alt"></i>
+      </div>
+    </section>
+    <script src="data.json"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
